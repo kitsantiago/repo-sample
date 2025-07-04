@@ -57,3 +57,29 @@ if __name__ == "__main__":
             print(f"Completed task: {self.tasks[index]['task']}")
         else:
             print("Invalid task number.")
+
+            import unittest
+from src.todo import TodoList
+
+class TestTodoList(unittest.TestCase):
+    def setUp(self):
+        self.todo_list = TodoList()
+
+    def test_add_task(self):
+        self.todo_list.add_task("Test task")
+        self.assertEqual(len(self.todo_list.tasks), 1)
+        self.assertEqual(self.todo_list.tasks[0]["task"], "Test task")
+        self.assertFalse(self.todo_list.tasks[0]["completed"])
+
+    def test_complete_task(self):
+        self.todo_list.add_task("Test task")
+        self.todo_list.complete_task(0)
+        self.assertTrue(self.todo_list.tasks[0]["completed"])
+
+    def test_complete_invalid_task(self):
+        self.todo_list.add_task("Test task")
+        self.todo_list.complete_task(999)
+        self.assertFalse(self.todo_list.tasks[0]["completed"])
+
+if __name__ == "__main__":
+    unittest.main()
