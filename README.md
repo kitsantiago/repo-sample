@@ -62,27 +62,4 @@ def main():
 if __name__ == "__main__":
     main()
 
-    class TodoList:
-    def __init__(self):
-        self.tasks = []
-
-    def add_task(self, task):
-        self.tasks.append({"task": task, "completed": False})
-        print(f"Added task: {task}")
-
-    def view_tasks(self):
-        if not self.tasks:
-            print("No tasks.")
-            return
-        for i, task in enumerate(self.tasks, 1):
-            status = "✓" if task["completed"] else " "
-            print(f"{i}. [{status}] {task['task']}")
-
-    def complete_task(self, index):
-        if 0 <= index < len(self.tasks):
-            self.tasks[index]["completed"] = True
-            print(f"Completed task: {self.tasks[index]['task']}")
-        else:
-            print("Invalid task number.")
-
     
