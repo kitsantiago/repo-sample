@@ -34,14 +34,5 @@ def main():
 
 if __name__ == "__main__":
     main()
-            import unittest
-from src.todo import TodoList
-
-class TestTodoList(unittest.TestCase):
-    def setUp(self):
-        self.todo_list = TodoList()
 
 
-
-if __name__ == "__main__":
-    unittest.main()
